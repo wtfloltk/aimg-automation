@@ -17,7 +17,7 @@ jobs:
         run: pip --cache-dir=pipcache install setuptools
       - uses: actions/setup-python@v6
         with:
-          python-version: '3.13'
+          python-version: '3.12'
           cache: 'pip' # caching pip dependencies
       - run: pip install --cache-dir=pipcache install -r requirements.txt
       - name: Install imaginAIry
