@@ -8,42 +8,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Python Setup Tools
-        run: pip install setuptools
-      - name: Get pip cache dir
-        id: aimg-automation
-        run: |
-             echo "::set-output name=dir::$(pip cache dir)"
-      - name: pip cache
-        uses: actions/cache@v4
-        with:
-           path: ${{ steps.pip-cache.outputs.dir }}
-           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-           restore-keys: |
-             ${{ runner.os }}-pip-
-      - name: Set up Python with caching
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: 'pip'
-      - name: Print Directory Contents
-        run: dir
-      - name: Install requirements
-        run: pip install -r requirements.txt
+        run: pip --cache-dir=pipcache install setuptools
+      - name: Setup pip cache
+        run: pip --cache-dir=pipcache install -r requirments.txt
       - name: Install imaginAIry
-        run: pip install imaginAIry
-      - name: Set up Python with caching
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: 'pip'
-      - name: Backup pip
-        run: zip / all.zip
+        run: pip --cache-dir=pipcache install imaginAIry
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
             name: pip
-            path: all.zip
+            path: pipcache
       - name: Create test png via AI
         run: sh aimg.sh imagine "cheese in the eifel tower"
       - name: Upload artifacts
