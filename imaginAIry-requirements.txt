@@ -246,7 +246,7 @@ pytest-randomly
     # via -r requirements-dev.in
 pytest-sugar
     # via -r requirements-dev.in
-python-dateutilpost0
+python-dateutilpost
     # via ghp-import
 pyyaml
     # via
@@ -262,7 +262,7 @@ pyyaml
     #   transformers
 pyyaml-env-tag
     # via mkdocs
-regex.11
+regex
     # via
     #   diffusers
     #   mkdocs-material
