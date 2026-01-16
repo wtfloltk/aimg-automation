@@ -6,8 +6,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
-      
+      - uses: actions/checkout@v5
       - name: Restore cached pip
         id: cache-aimg-restore
         uses: actions/cache/restore@v4
@@ -16,10 +15,15 @@ jobs:
           key: ${{ runner.os }}-aimg
       - name: Python Setup Tools
         run: pip --cache-dir=pipcache install setuptools
-      - name: Setup pip cache
-        run: pip --cache-dir=pipcache install -r requirements.txt
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+          cache: 'pip' # caching pip dependencies
+      - run: pip install --cache-dir=pipcache install -r requirements.txt
       - name: Install imaginAIry
         run: pip --cache-dir=pipcache install imaginAIry
+      - name: Install imaginAIry 15
+        run: python -m easy_install imaginAIry-15.0.0-py3.12.egg
       - name: Save pip cache
         id: cache-aimg-save
         uses: actions/cache/save@v4
