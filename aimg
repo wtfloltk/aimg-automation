@@ -1,3 +1,4 @@
 if __name__ == "__main__":
-    import imaginairy.cli.main
-    imaginairy.cli.main.aimg()
+    import imaginAIry.cli.main
+    imaginAIry.cli.main.aimg()
+
