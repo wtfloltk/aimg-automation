@@ -18,7 +18,7 @@ babel
     # via mkdocs-material
 build
     # via pip-tools
-certificate
+certifi
     # via
     #   httpcore
     #   httpx
@@ -161,7 +161,7 @@ mypy-extensions
     # via mypy
 networkx
     # via torch
-ninja.1
+ninja
     # via optimum-quanto
 numpy
     # via
