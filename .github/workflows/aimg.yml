@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-          cache: 'pip' # caching pip dependencies
-      - run: pip install --cache-dir=pipcache install -r requirements.txt
+          cache: 'pipcache' # caching pip dependencies
+      - run: pip install --cache-dir=pipcache -r requirements.txt
       - name: Install imaginAIry
         run: pip --cache-dir=pipcache install imaginAIry
       - name: Install imaginAIry 15
