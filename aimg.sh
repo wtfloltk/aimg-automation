@@ -1,1 +1,1 @@
-python aimg $*
+py aimg $*
