@@ -7,6 +7,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: 'pip' # caching pip dependencies
       - name: Restore cached pip
         id: cache-aimg-restore
         uses: actions/cache/restore@v4
@@ -15,10 +19,6 @@ jobs:
           key: ${{ runner.os }}-aimg
       - name: Python Setup Tools
         run: pip --cache-dir=pipcache install setuptools
-      - uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-          cache: 'pip' # caching pip dependencies
       - run: pip install --cache-dir=pipcache -r requirements.txt
       - name: Install imaginAIry
         run: pip --cache-dir=pipcache install imaginAIry
