@@ -1,1 +1,1 @@
-"# aimg-automation" 
+[![aimg-automation](https://github.com/wtfloltk/aimg-automation/actions/workflows/aimg.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/wtfloltk/aimg-automation/actions/workflows/aimg.yml)
