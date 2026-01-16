@@ -6,6 +6,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - uses: WarpBuilds/snapshot-save@v1.1.0
+        with:
+          alias: aimg-automation
+        
       - uses: actions/checkout@v4
       - name: Print Directory Contents
         run: dir
@@ -16,7 +20,7 @@ jobs:
       - name: Install imaginAIry
         run: pip install imaginAIry
       - name: Create test png via AI
-        run: aimg imagine "cheese in the eifel tower"
+        run: sh aimg.sh imagine "cheese in the eifel tower"
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
