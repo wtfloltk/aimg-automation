@@ -6,10 +6,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: WarpBuilds/snapshot-save@v1.1.0
+      - name: Set up Python with caching
+        uses: actions/setup-python@v5
         with:
-          alias: aimg-automation
-        
+          python-version: '3.12'
+          cache: 'pip'
       - uses: actions/checkout@v4
       - name: Print Directory Contents
         run: dir
