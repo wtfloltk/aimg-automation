@@ -371,7 +371,7 @@ typing-extensions
     #   spandrel
     #   torch
     #   uvicorn
-urllib
+urllib3
     # via
     #   requests
     #   responses
