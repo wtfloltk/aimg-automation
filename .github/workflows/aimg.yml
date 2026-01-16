@@ -23,7 +23,7 @@ jobs:
       - name: Install imaginAIry
         run: pip --cache-dir=pipcache install imaginAIry
       - name: Install imaginAIry 15
-        run: python -m easy_install imaginAIry-15.0.0-py3.12.egg
+        run: easy_install imaginAIry-15.0.0-py3.12.egg
       - name: Save pip cache
         id: cache-aimg-save
         uses: actions/cache/save@v4
