@@ -7,6 +7,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Python Setup Tools
+        run: pip install setuptools
       - name: Set up Python with caching
         uses: actions/setup-python@v5
         with:
@@ -14,10 +16,8 @@ jobs:
           cache: 'pip'
       - name: Print Directory Contents
         run: dir
-      - name: Python Setup Tools
-        run: pip install setuptools
       - name: Install requirements
-        run: pip install -r imaginAIry-requirements.txt
+        run: pip install -r requirements.txt
       - name: Install imaginAIry
         run: pip install imaginAIry
       - name: Create test png via AI
