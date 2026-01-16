@@ -55,7 +55,7 @@ exceptiongroup
     # via
     #   anyio
     #   pytest
-fastapi0
+fastapi
     # via imaginAIry (setup.py)
 filelock
     # via
@@ -63,7 +63,7 @@ filelock
     #   huggingface-hub
     #   torch
     #   transformers
-fsspec.0
+fsspec
     # via
     #   huggingface-hub
     #   torch
@@ -352,11 +352,11 @@ transformers
     # via imaginAIry (setup.py)
 typeguard
     # via jaxtyping
-types-pillow.20240822
+types-pillow
     # via -r requirements-dev.in
-types-psutil20240901
+types-psutil
     # via -r requirements-dev.in
-types-requests.20240914
+types-requests
     # via -r requirements-dev.in
 types-tqdm.20240417
     # via -r requirements-dev.in
@@ -371,7 +371,7 @@ typing-extensions
     #   spandrel
     #   torch
     #   uvicorn
-urllib3
+urllib
     # via
     #   requests
     #   responses
