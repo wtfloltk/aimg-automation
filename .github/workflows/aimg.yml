@@ -12,24 +12,24 @@ jobs:
           python-version: '3.12'
           cache: 'pip' # caching pip dependencies
       - name: Restore cached pip
-        id: cache-aimg-restore
+        id: cache-pip-restore
         uses: actions/cache/restore@v4
         with:
-          path: pipcache
-          key: ${{ runner.os }}-aimg
+          path: pip
+          key: pip
       - name: Python Setup Tools
-        run: pip --cache-dir=pipcache install setuptools
-      - run: pip install --cache-dir=pipcache -r requirements.txt
+        run: pip --cache-dir=pip install setuptools
+      - run: pip install --cache-dir=pip -r requirements.txt
       - name: Install imaginAIry
-        run: pip --cache-dir=pipcache install imaginAIry
+        run: pip --cache-dir=pip install imaginAIry
       - name: Install imaginAIry 15
         run: easy_install imaginAIry-15.0.0-py3.12.egg
       - name: Save pip cache
-        id: cache-aimg-save
+        id: cache-pip-save
         uses: actions/cache/save@v4
         with:
           path: pipcache
-          key: ${{ steps.cache-aimg-restore.outputs.cache-primary-key }}
+          key: ${{ steps.cache-pip-restore.outputs.cache-primary-key }}
       - name: Create test png via AI
         run: python aimg imagine "cheese in the eifel tower"
       - name: Upload artifacts
