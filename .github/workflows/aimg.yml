@@ -20,6 +20,19 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install imaginAIry
         run: pip install imaginAIry
+      - name: Set up Python with caching
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Backup pip
+        run: zip / all.zip
+      - name: Upload artifacts
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+            name: pip
+            path: all.zip
       - name: Create test png via AI
         run: sh aimg.sh imagine "cheese in the eifel tower"
       - name: Upload artifacts
