@@ -1,0 +1,19 @@
+name: aimg
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    container: devkitpro:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install imaginAIry
+        run: pip install imaginAIry
+      - name: Create test png via AI
+        run: aimg imagine "cheese in the eifel tower"
+      - name: Upload artifacts
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+            name: output
+            path: outputs
