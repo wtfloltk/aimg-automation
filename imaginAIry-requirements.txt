@@ -179,7 +179,7 @@ omegaconf
     # via imaginAIry (setup.py)
 open-clip-torch
     # via imaginAIry (setup.py)
-opencv-python.84
+opencv-python
     # via imaginAIry (setup.py)
 optimum-quanto
     # via imaginAIry (setup.py)
@@ -358,7 +358,7 @@ types-psutil
     # via -r requirements-dev.in
 types-requests
     # via -r requirements-dev.in
-types-tqdm.20240417
+types-tqdm
     # via -r requirements-dev.in
 typing-extensions
     # via
