@@ -20,7 +20,7 @@ jobs:
             name: pip
             path: pipcache
       - name: Create test png via AI
-        run: sh aimg.sh imagine "cheese in the eifel tower"
+        run: aimg imagine "cheese in the eifel tower"
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
