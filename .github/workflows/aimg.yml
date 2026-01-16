@@ -8,19 +8,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Print Directory Contents
-        run: ls
+        run: dir
       - name: Read the desired prompt
-        run: export prompt="cheese in the eifel tower"
+        run: Set prompt="cheese in the eifel tower"
       - name: Echo/readback/printout the entered prompt
-        run: echo ${prompt}
-      - name: Install python
-        run: apt install -y python
+        run: echo "%prompt%"
       - name: Install requirements
         run: pip install -r imaginAIry-requirements.txt
       - name: Install imaginAIry
         run: pip install imaginAIry
       - name: Create test png via AI
-        run: ./aimg.sh imagine "$prompt"
+        run: aimg imagine "$prompt"
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
