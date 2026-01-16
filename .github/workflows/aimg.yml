@@ -10,7 +10,7 @@ jobs:
       - name: Python Setup Tools
         run: pip --cache-dir=pipcache install setuptools
       - name: Setup pip cache
-        run: pip --cache-dir=pipcache install -r requirments.txt
+        run: pip --cache-dir=pipcache install -r requirements.txt
       - name: Install imaginAIry
         run: pip --cache-dir=pipcache install imaginAIry
       - name: Upload artifacts
