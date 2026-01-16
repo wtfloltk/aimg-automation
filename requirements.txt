@@ -47,7 +47,6 @@ coverage
     # via -r requirements-dev.in
 diffusers
     # via imaginAIry (setup.py)
-easy_install
 einops
     # via
     #   imaginAIry (setup.py)
