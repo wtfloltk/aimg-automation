@@ -246,7 +246,7 @@ pytest-randomly
     # via -r requirements-dev.in
 pytest-sugar
     # via -r requirements-dev.in
-python-dateutilpost
+python-dateutil
     # via ghp-import
 pyyaml
     # via
