@@ -29,7 +29,7 @@ jobs:
           path: pip
           key: ${{ steps.cache-pip-restore.outputs.cache-primary-key }}
       - name: Create test png via AI
-        run: python3.12 aimg imagine "cheese in the eifel tower"
+        run: python aimg imagine "cheese in the eifel tower"
       - name: Upload artifacts
         if: ${{ success() }}
         uses: actions/upload-artifact@v4
