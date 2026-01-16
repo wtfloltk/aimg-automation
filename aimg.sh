@@ -1,1 +1,1 @@
-py /bin/aimg $*
+py aimg $*
